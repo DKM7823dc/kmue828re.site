@@ -27,63 +27,7 @@
             position: relative;
         }
 
-        /* Line Icon */
-        .line-icon {
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            background: #00C300;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0,195,0,0.4);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
 
-        .line-icon:hover {
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .line-icon svg {
-            width: 30px;
-            height: 30px;
-            fill: white;
-        }
-
-        .notification-badge {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: #ff4444;
-            color: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: bold;
-            animation: bounce 1.5s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
 
         /* Header */
         .header {
@@ -140,17 +84,19 @@
         }
 
         .expert-info {
-            display: flex;
-            align-items: center;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         .expert-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-right: 15px;
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+            margin: 0 auto 15px auto;
             border: 3px solid #007bff;
+            object-fit: cover;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .expert-details h3 {
@@ -215,7 +161,7 @@
         }
 
         .content-section h2::before {
-            content: "🤔";
+            content: "";
             position: absolute;
             left: 15px;
             top: 50%;
@@ -433,6 +379,68 @@
             margin-top: 15px;
         }
 
+        /* Floating Limited Offer */
+        .floating-offer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+            box-shadow: 0 -4px 15px rgba(255,107,107,0.4);
+            z-index: 1000;
+            animation: floatBounce 2s ease-in-out infinite, heartbeat 1.5s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        .floating-offer:hover {
+            animation: floatBounce 1s ease-in-out infinite, heartbeat 0.8s ease-in-out infinite;
+        }
+
+        .floating-offer h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            font-weight: bold;
+            animation: textJump 2s ease-in-out infinite;
+        }
+
+        .floating-offer p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        @keyframes floatBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            25% {
+                transform: scale(1.02);
+            }
+            75% {
+                transform: scale(0.98);
+            }
+        }
+
+        @keyframes textJump {
+            0%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-3px);
+            }
+        }
+
         /* Dark mode support */
         @media (prefers-color-scheme: dark) {
             .container {
@@ -455,14 +463,7 @@
     </style>
 </head>
 <body>
-    <!-- Line Icon -->
-    <div class="line-icon" onclick="kma()">
-        <svg viewBox="0 0 100 100" width="35" height="35">
-            <circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="8"/>
-            <text x="50" y="60" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">LINE</text>
-        </svg>
-        <div class="notification-badge">1</div>
-    </div>
+
 
     <div class="container">
         <!-- Header -->
@@ -474,17 +475,14 @@
         <!-- Expert Section -->
         <section class="expert-section">
             <div class="expert-info">
-                <img src="img/a.jpg" alt="市川雄一郎" class="expert-avatar">
+                <img src="img/1.jpg" alt="市川雄一郎" class="expert-avatar">
                 <div class="expert-details">
                     <h3>市川雄一郎</h3>
                     <p>日本著名金融プランナー。投資教育において分かりやすい解説で高い評価を受ける。ソフトバンクグループが設立したネット大学で客員講師として「金融プラン入門」と「資産運用実践論」などの講座を担当。</p>
                 </div>
             </div>
             
-            <div class="limited-offer">
-                <h4>🎯 無料枠20名限定</h4>
-                <p>今すぐお申し込みください！</p>
-            </div>
+
         </section>
 
         <!-- Problem Section -->
@@ -493,7 +491,7 @@
             <p>急速に変化する株式市場において、正しい投資判断は極めて重要です。データによると、多くの投資家は効果的な分析ツールを欠いており、複雑な市場環境で困難に直面しています。</p>
             <p>私たちは明確で信頼できる市場シグナルを提供し、潜在的な投資機会の発見をお手伝いいたします。</p>
             
-            <img src="img/3.webp" alt="投資分析" class="content-image">
+            <img src="img/2.jpeg" alt="投資分析" class="content-image">
         </section>
 
         <!-- Solution Section -->
@@ -505,7 +503,7 @@
                 <li><strong>専門的市場解読：</strong>専門家が定期的に市場トレンドを分析し、最新情報とアドバイスを確実にお届けします。</li>
             </ul>
             
-            <img src="img/1.jpg" alt="市場分析" class="content-image">
+            <img src="img/3.jpeg" alt="市場分析" class="content-image">
         </section>
 
         <!-- Why Choose Us Section -->
@@ -530,7 +528,7 @@
                 <li><strong>継続的教育とサポート：</strong>市場シグナル提供に加え、定期的なオンラインセミナーと教育リソースで投資知識とスキル向上を支援します。</li>
             </ul>
             
-            <img src="img/2.jpeg" alt="投資成功" class="content-image">
+            <img src="img/4.webp" alt="投資成功" class="content-image">
         </section>
 
         <!-- Risk Warning -->
@@ -555,6 +553,12 @@
             <p>&copy; 2024 株式投資分析サービス. All rights reserved.</p>
             <p>本サービスは投資助言業ではありません。投資判断は自己責任で行ってください。</p>
         </footer>
+    </div>
+
+    <!-- Floating Limited Offer -->
+    <div class="floating-offer" onclick="kma()">
+        <h4>🎯 無料枠20名限定</h4>
+        <p>今すぐお申し込みください！</p>
     </div>
 
     <script>
