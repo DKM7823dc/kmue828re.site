@@ -51,14 +51,26 @@
     <div class="min-h-screen gradient-bg flex items-center justify-center p-4">
         <div class="w-full max-w-sm bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
             <!-- 头部区域 -->
-            <div class="bg-gradient-to-r from-purple-600 to-blue-600 p-6 text-center">
-                <h1 class="text-2xl font-bold text-white mb-2">可制作任何落地页</h1>
-                <p class="text-purple-100 text-sm">全网唯一一家落地页制作工作室</p>
+            <div class="bg-gradient-to-r from-purple-600 to-blue-600 p-6 text-center relative overflow-hidden">
+                <!-- 背景装饰 -->
+                <div class="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-red-400/20 animate-pulse"></div>
+                
+                <div class="relative z-10">
+                    <h1 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-orange-300 mb-3 leading-tight animate-bounce">
+                        🔥 可制作任何落地页 🔥
+                    </h1>
+                    <div class="bg-red-500 text-white px-4 py-2 rounded-full inline-block mb-2 font-bold text-sm shadow-lg">
+                        ⭐ 全网唯一一家落地页制作工作室 ⭐
+                    </div>
+                    <div class="text-yellow-200 text-xs font-medium">
+                        💎 专业 · 独家 · 顶级服务 💎
+                    </div>
+                </div>
             </div>
 
             <!-- 展示图片 -->
             <div class="p-4 bg-gray-50 dark:bg-gray-700">
-                <img src="https://www.wey623km.shop/guog/img/3.png" 
+                <img src="12.jpg" 
                      alt="落地页展示" 
                      class="w-full h-32 object-cover rounded-lg shadow-md"
                      onerror="this.style.display='none'">
@@ -93,10 +105,16 @@
                 </div>
 
                 <!-- 附加服务 -->
-                <div class="text-center text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                <div class="text-center text-sm text-gray-600 dark:text-gray-400 space-y-2">
                     <p>✅ 提供域名和服务器</p>
                     <p>✅ 支持任意国家和语言</p>
-                    <p class="text-xs text-purple-600 dark:text-purple-400 font-medium">售后服务价值远大于产品价值</p>
+                    
+                    <!-- 突出售后服务 -->
+                    <div class="bg-gradient-to-r from-orange-400 to-red-500 text-white p-3 rounded-lg shadow-lg mx-2 mt-3">
+                        <p class="text-base font-bold leading-tight">
+                            🏆 售后服务价值远大于产品本身价值 🏆
+                        </p>
+                    </div>
                 </div>
 
                 <!-- 联系方式和行动号召 -->
