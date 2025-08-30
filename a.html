@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专业落地页制作工作室</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <!-- 深色模式检测 -->
+    <script>
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+
+    <div class="min-h-screen gradient-bg flex items-center justify-center p-4">
+        <div class="w-full max-w-sm bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
+            <!-- 头部区域 -->
+            <div class="bg-gradient-to-r from-purple-600 to-blue-600 p-6 text-center">
+                <h1 class="text-2xl font-bold text-white mb-2">可制作任何落地页</h1>
+                <p class="text-purple-100 text-sm">全网唯一一家落地页制作工作室</p>
+            </div>
+
+            <!-- 展示图片 -->
+            <div class="p-4 bg-gray-50 dark:bg-gray-700">
+                <img src="https://www.wey623km.shop/guog/img/3.png" 
+                     alt="落地页展示" 
+                     class="w-full h-32 object-cover rounded-lg shadow-md"
+                     onerror="this.style.display='none'">
+            </div>
+
+            <!-- 核心卖点 -->
+            <div class="p-6 space-y-4">
+                <div class="grid grid-cols-2 gap-3 text-sm">
+                    <div class="bg-green-50 dark:bg-green-900 text-green-700 dark:text-green-300 p-3 rounded-lg text-center">
+                        <div class="font-semibold">不套模板</div>
+                        <div class="text-xs">手写代码</div>
+                    </div>
+                    <div class="bg-blue-50 dark:bg-blue-900 text-blue-700 dark:text-blue-300 p-3 rounded-lg text-center">
+                        <div class="font-semibold">专业UI</div>
+                        <div class="text-xs">源码交付</div>
+                    </div>
+                </div>
+
+                <!-- 服务类型 -->
+                <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                    <h3 class="font-semibold text-gray-800 dark:text-gray-200 mb-2 text-sm">落地页类型：</h3>
+                    <div class="flex flex-wrap gap-1 text-xs">
+                        <span class="bg-purple-100 dark:bg-purple-800 text-purple-700 dark:text-purple-300 px-2 py-1 rounded">GP金融</span>
+                        <span class="bg-green-100 dark:bg-green-800 text-green-700 dark:text-green-300 px-2 py-1 rounded">JZ网赚</span>
+                        <span class="bg-pink-100 dark:bg-pink-800 text-pink-700 dark:text-pink-300 px-2 py-1 rounded">交友</span>
+                        <span class="bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-300 px-2 py-1 rounded">男科NK</span>
+                        <span class="bg-yellow-100 dark:bg-yellow-800 text-yellow-700 dark:text-yellow-300 px-2 py-1 rounded">虚拟货币</span>
+                        <span class="bg-red-100 dark:bg-red-800 text-red-700 dark:text-red-300 px-2 py-1 rounded">婚恋</span>
+                        <span class="bg-indigo-100 dark:bg-indigo-800 text-indigo-700 dark:text-indigo-300 px-2 py-1 rounded">手表包包</span>
+                        <span class="bg-orange-100 dark:bg-orange-800 text-orange-700 dark:text-orange-300 px-2 py-1 rounded">翡翠</span>
+                    </div>
+                </div>
+
+                <!-- 附加服务 -->
+                <div class="text-center text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                    <p>✅ 提供域名和服务器</p>
+                    <p>✅ 支持任意国家和语言</p>
+                    <p class="text-xs text-purple-600 dark:text-purple-400 font-medium">售后服务价值远大于产品价值</p>
+                </div>
+
+                <!-- 联系方式和行动号召 -->
+                <div class="space-y-3">
+                    <div class="text-center">
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mb-2">联系方式</p>
+                        <div class="bg-blue-50 dark:bg-blue-900 p-3 rounded-lg">
+                            <p class="text-blue-700 dark:text-blue-300 font-mono text-sm">telegram: @snvtr2</p>
+                        </div>
+                    </div>
+                    
+                    <button onclick="contactUs()" 
+                            class="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold py-4 rounded-lg shadow-lg pulse-animation hover:shadow-xl transition-all duration-300 text-lg">
+                        马上联系 🚀
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function contactUs() {
+            // 创建自定义提示框
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+            modal.innerHTML = `
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-2xl max-w-sm w-full text-center">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h3 class="text-lg font-bold text-gray-800 dark:text-gray-200 mb-2">联系我们</h3>
+                    <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">请复制以下联系方式</p>
+                    <div class="bg-blue-50 dark:bg-blue-900 p-3 rounded-lg mb-4">
+                        <p class="text-blue-700 dark:text-blue-300 font-mono text-sm">telegram: @snvtr2</p>
+                    </div>
+                    <button onclick="this.closest('.fixed').remove()" 
+                            class="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                        知道了
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // 添加简单的滚动动画
+        window.addEventListener('load', () => {
+            document.querySelector('.w-full.max-w-sm').style.transform = 'translateY(20px)';
+            document.querySelector('.w-full.max-w-sm').style.opacity = '0';
+            
+            setTimeout(() => {
+                document.querySelector('.w-full.max-w-sm').style.transform = 'translateY(0)';
+                document.querySelector('.w-full.max-w-sm').style.opacity = '1';
+                document.querySelector('.w-full.max-w-sm').style.transition = 'all 0.6s ease-out';
+            }, 100);
+        });
+    </script>
+</body>
+</html>
