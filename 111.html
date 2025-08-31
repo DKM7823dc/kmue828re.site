@@ -1,0 +1,40 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>长按二维码扫码咨询 - 优码二维码</title>
+    <meta name="description" content="长按二维码扫码咨询">
+    <meta property="og:description" content="长按二维码扫码咨询" />
+    <meta property="og:image" content="https://usrcdn.ym.link/youma/202508/580c0a93-fe1b-48fd-88ed-e3081faec18c.jpg?sign=d285c38a4147d13a2a0825a1dca171d7e45fd3d3905cbae2caa75452fab155c6&t=1756604944&imageMogr2/thumbnail/200x/" />
+    <link vite-ignore rel="icon" href="https://usrcdn.ym.link/youma/202508/580c0a93-fe1b-48fd-88ed-e3081faec18c.jpg?sign=d285c38a4147d13a2a0825a1dca171d7e45fd3d3905cbae2caa75452fab155c6&t=1756604944&imageMogr2/thumbnail/200x/" type="image/x-icon" />
+    <link rel="shortcut icon" href="https://usrcdn.ym.link/youma/202508/580c0a93-fe1b-48fd-88ed-e3081faec18c.jpg?sign=d285c38a4147d13a2a0825a1dca171d7e45fd3d3905cbae2caa75452fab155c6&t=1756604944&imageMogr2/thumbnail/200x/" type="image/x-icon" />
+    <script type="text/javascript">
+      window.NATIVE_URL = 'weixin://dl/business/?t=JqMD4opHRvv&cq=trackId=90266023';
+      window.YM_HAS_ADV = 'false' === 'true';
+      function isMobileDevice() {
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+        return isMobile;
+      }
+      function jumpNativeUrl() {
+        if (!isMobileDevice() || window.YM_HAS_ADV || !window.NATIVE_URL) {
+          return;
+        }
+        const nativeUrl = window.NATIVE_URL;
+        if (nativeUrl && nativeUrl.startsWith('weixin://')) {
+          location.href = nativeUrl;
+        } else {
+          console.error('跳转地址不合法', nativeUrl);
+        }
+      }
+      setTimeout(jumpNativeUrl, 1000);
+    </script>
+    <script type="module" crossorigin src="https://pubcdn.ym.link/youma/code_preview/v1.8.6-prod.69/assets/index-BZRIEQdZ.js"></script>
+    <link rel="stylesheet" crossorigin href="https://pubcdn.ym.link/youma/code_preview/v1.8.6-prod.69/assets/index-ZXwrRTIl.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
