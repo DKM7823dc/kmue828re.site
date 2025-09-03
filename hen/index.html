@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<script>
+ function d2() {
+            window.open('https://wa.me/11111111111', '_blank');
+        }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Financieel Onderwijs & Marktanalyse - Investering Leergemeenschap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .breathing {
+            animation: breathing 2s ease-in-out infinite;
+        }
+        
+        @keyframes breathing {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #1d4ed8, #1e40af);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            background: #25d366;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        }
+        
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            width: 80%;
+            max-width: 300px;
+        }
+        
+        .floating-btn button {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ef4444;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            animation: bounce 1s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .highlight-text {
+            background: linear-gradient(45deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1));
+            border-left: 4px solid #3b82f6;
+            position: relative;
+        }
+
+        .accent-blue {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        .accent-green {
+            color: #34d399;
+            font-weight: 600;
+        }
+
+        .accent-purple {
+            color: #a78bfa;
+            font-weight: 600;
+        }
+
+        .accent-orange {
+            color: #fb923c;
+            font-weight: 600;
+        }
+
+        .tag-hot {
+            background: linear-gradient(45deg, #ef4444, #f97316);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            animation: pulse-glow 2s infinite;
+        }
+        
+        .tag-new {
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        .tag-free {
+            background: linear-gradient(45deg, #8b5cf6, #7c3aed);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+        }
+
+        .decorated-section {
+            position: relative;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 1rem;
+        }
+
+        .key-point {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                right: 15px;
+                width: 50px;
+                height: 50px;
+            }
+            .floating-btn {
+                width: 90%;
+                bottom: 15px;
+            }
+            .floating-btn button {
+                font-size: 14px;
+                padding: 12px 16px;
+            }
+            .floating-btn span {
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body class="gradient-bg text-white min-h-screen">
+    <!-- Header Section -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="text-center mb-12">
+            <div class="mb-6">
+                <span class="tag-hot">🔥 MEEST POPULAIR</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                <span class="highlight-text">Financieel Onderwijs</span> & Marktanalyse
+            </h1>
+            <div class="decorated-section">
+                <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    <i class="fas fa-graduation-cap accent-blue mr-2"></i>
+                    Sluit je aan bij onze <span class="accent-blue">educatieve gemeenschap</span> van marktanalisten en ervaren beleggers. We delen <span class="accent-green">marktinzichten</span>, bespreken <span class="accent-purple">beleggingsstrategieën</span> en bieden educatieve bronnen om je te helpen weloverwogen financiële beslissingen te nemen.
+                </p>
+                <div class="key-point mt-6">
+                    <p class="text-lg font-semibold text-yellow-400">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        Onthoud: Alle investeringen brengen <span class="text-red-400">risico's</span> met zich mee.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="flex justify-center mb-12">
+            <div class="relative">
+                <span class="tag-new absolute -top-4 -right-4 z-10">✨ NIEUW</span>
+                <img src="img/12.jpg" alt="Financieel Onderwijs Gemeenschap" class="rounded-lg shadow-2xl max-w-md w-full">
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <button onclick="d2()" class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg inline-flex items-center space-x-2 breathing">
+                <i class="fab fa-whatsapp text-2xl"></i>
+                <span>Doe Mee aan Educatieve Gemeenschap</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+            <p class="text-sm text-gray-400 mt-3">
+                <span class="tag-free mr-2">100% GRATIS</span>
+                <i class="fas fa-shield-check accent-green mr-1"></i>
+                Veilig & Betrouwbaar
+            </p>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="bg-slate-800/50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="tag-hot mb-4">📚 PREMIUM EDUCATIE</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="highlight-text">Educatieve Bronnen</span> & Marktinzichten
+                </h2>
+                <div class="key-point max-w-3xl mx-auto">
+                    <p class="text-xl text-gray-300">
+                        <i class="fas fa-brain accent-purple mr-2"></i>
+                        We bieden <span class="accent-blue">professionele educatieve inhoud</span> om beleggers te helpen marktdynamiek te begrijpen en <span class="accent-green">analytische vaardigheden</span> te ontwikkelen.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-hover bg-slate-700/50 p-6 rounded-lg relative">
+                    <span class="tag-free absolute -top-2 -right-2">GRATIS</span>
+                    <div class="text-center">
+                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">
+                            <span class="accent-blue">Marktanalyse Onderwijs</span>
+                        </h3>
+                        <p class="text-gray-300">
+                            <i class="fas fa-check-circle accent-green mr-2"></i>
+                            Leer <span class="accent-purple">fundamentele en technische analysetechnieken</span> om marktbewegingen en trends beter te begrijpen.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-slate-700/50 p-6 rounded-lg relative">
+                    <span class="tag-new absolute -top-2 -right-2">PRO</span>
+                    <div class="text-center">
+                        <div class="bg-gradient-to-r from-purple-500 to-purple-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-graduation-cap text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">
+                            <span class="accent-purple">Beleggingsonderwijs</span>
+                        </h3>
+                        <p class="text-gray-300">
+                            <i class="fas fa-shield-alt accent-blue mr-2"></i>
+                            Educatieve inhoud over <span class="accent-orange">beleggingsprincipes</span>, risicobeheer en portefeuille diversificatiestrategieën.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-slate-700/50 p-6 rounded-lg relative">
+                    <span class="tag-hot absolute -top-2 -right-2">LIVE</span>
+                    <div class="text-center">
+                        <div class="bg-gradient-to-r from-green-500 to-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-users text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">
+                            <span class="accent-green">Gemeenschapsdiscussie</span>
+                        </h3>
+                        <p class="text-gray-300">
+                            <i class="fas fa-comments accent-green mr-2"></i>
+                            Doe mee aan <span class="accent-blue">live discussies</span> met ervaren beleggers om inzichten te delen en te leren van verschillende perspectieven.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Educational Content Section -->
+    <div class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <div class="decorated-section mb-8">
+                    <h3 class="text-2xl font-bold mb-4">
+                        <i class="fas fa-lightbulb accent-orange mr-2"></i>
+                        Waarom Onze <span class="highlight-text">Gemeenschap</span>?
+                    </h3>
+                    <p class="text-xl text-gray-300 mb-4">
+                        <i class="fas fa-users accent-purple mr-2"></i>
+                        Onze gemeenschap richt zich op <span class="accent-blue">professionele educatieve inhoud</span> en marktanalysediscussies. We geloven dat <span class="accent-green">geïnformeerde beleggers</span> betere beslissingen nemen wanneer ze marktfundamenten en technische analyseprincipes begrijpen.
+                    </p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <span class="tag-free">📊 EXPERT ANALYSE</span>
+                        <span class="tag-new">🎓 PROFESSIONAL</span>
+                        <span class="tag-hot">💼 BEWEZEN METHODE</span>
+                    </div>
+                </div>
+                
+                <div class="relative mb-8">
+                    <img src="img/2.jpg" alt="Marktanalyse Onderwijs" class="rounded-lg shadow-2xl max-w-md w-full mx-auto">
+                </div>
+                
+                <button onclick="d2()" class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg inline-flex items-center space-x-2 breathing">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    <span>Doe Mee aan Educatieve Discussie</span>
+                    <i class="fas fa-rocket"></i>
+                </button>
+            </div>
+            
+            <div class="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 p-6 rounded-lg border-2 border-yellow-500/50 mb-12 relative">
+                <div class="absolute -top-3 left-6">
+                    <span class="tag-new">⚠️ BELANGRIJK</span>
+                </div>
+                <div class="mt-4">
+                    <h4 class="text-xl font-bold text-yellow-300 mb-3">
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Educatieve Focus
+                    </h4>
+                    <p class="text-lg text-center">
+                        Deze gemeenschap is gewijd aan <span class="accent-blue">educatieve discussies</span> over beleggen en marktanalyse. We delen <span class="accent-green">kennis en leerervaringen</span>.
+                    </p>
+                    <div class="key-point mt-4">
+                        <p class="text-yellow-300 font-semibold">
+                            <i class="fas fa-graduation-cap mr-2"></i>
+                            Let op: dit is <span class="text-red-400">geen financieel advies</span> en alle inhoud is uitsluitend voor <span class="accent-blue">educatieve doeleinden</span>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Learning Benefits Section -->
+    <div class="bg-slate-800/50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="tag-hot mb-4">🎯 TOP VOORDELEN</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Waarom Focus op <span class="highlight-text">Financieel Onderwijs</span>?
+                </h2>
+                <div class="key-point max-w-3xl mx-auto">
+                    <p class="text-xl text-gray-300">
+                        <i class="fas fa-brain accent-purple mr-2"></i>
+                        <span class="accent-blue">Kennis en begrip</span> zijn de basis van verstandige beleggingsbeslissingen. Leer door <span class="accent-green">discussie en analyse</span>.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card-hover bg-slate-700/50 p-6 rounded-lg text-center">
+                    <div class="bg-gradient-to-r from-green-500 to-emerald-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-graduation-cap text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">
+                        <span class="accent-green">Leer Fundamenten</span>
+                    </h3>
+                    <p class="text-gray-300">
+                        <i class="fas fa-check accent-green mr-2"></i>
+                        Begrijp <span class="accent-blue">basis beleggingsprincipes</span> en marktmechanismen door educatieve inhoud.
+                    </p>
+                </div>
+                
+                <div class="card-hover bg-slate-700/50 p-6 rounded-lg text-center">
+                    <div class="bg-gradient-to-r from-blue-500 to-cyan-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">
+                        <span class="accent-blue">Risicobewustzijn</span>
+                    </h3>
+                    <p class="text-gray-300">
+                        <i class="fas fa-check accent-green mr-2"></i>
+                        Leer verschillende soorten <span class="accent-orange">beleggingsrisico's</span> en beheerstrategieën te identificeren en begrijpen.
+                    </p>
+                </div>
+                
+                <div class="card-hover bg-slate-700/50 p-6 rounded-lg text-center">
+                    <div class="bg-gradient-to-r from-purple-500 to-pink-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">
+                        <span class="accent-purple">Analytisch Denken</span>
+                    </h3>
+                    <p class="text-gray-300">
+                        <i class="fas fa-check accent-green mr-2"></i>
+                        Ontwikkel <span class="accent-blue">kritische denkvaardigheden</span> voor het evalueren van beleggingsmogelijkheden en marktinformatie.
+                    </p>
+                </div>
+                
+                <div class="card-hover bg-slate-700/50 p-6 rounded-lg text-center">
+                    <div class="bg-gradient-to-r from-orange-500 to-red-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-pie text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">
+                        <span class="accent-orange">Portefeuille Concepten</span>
+                    </h3>
+                    <p class="text-gray-300">
+                        <i class="fas fa-check accent-green mr-2"></i>
+                        Leer over <span class="accent-purple">diversificatie</span>, activaallocatie en portefeuilleopstellingsprincipes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Community Learning Section -->
+    <div class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <div class="relative mb-8">
+                    <span class="tag-new absolute -top-4 -left-4 z-10">🌟 COMMUNITY</span>
+                    <img src="img/3.jpg" alt="Langetermijn Leren" class="rounded-lg shadow-2xl max-w-md w-full mx-auto">
+                </div>
+                
+                <h2 class="text-3xl font-bold mb-6">
+                    Kennis Opbouwen Door <span class="highlight-text">Gemeenschappelijk Leren</span>
+                </h2>
+                
+                <div class="decorated-section mb-8">
+                    <p class="text-xl text-gray-300 mb-4">
+                        <i class="fas fa-rocket accent-blue mr-2"></i>
+                        <span class="accent-blue">Financieel onderwijs</span> is een levenslange reis. Onze gemeenschap biedt een <span class="accent-green">ondersteunende omgeving</span> voor het leren over markten, beleggingsprincipes en analytische technieken.
+                    </p>
+                    <div class="flex justify-center space-x-3 mt-4">
+                        <span class="tag-free">🎓 EXPERT BEGELEIDING</span>
+                        <span class="tag-new">🤝 SAMEN LEREN</span>
+                        <span class="tag-hot">💡 PRAKTISCHE TIPS</span>
+                    </div>
+                </div>
+                
+                <div class="relative mb-8">
+                    <img src="img/4.jpg" alt="Educatieve Bronnen" class="rounded-lg shadow-2xl max-w-md w-full mx-auto">
+                </div>
+                
+                <div class="key-point">
+                    <p class="text-xl text-gray-300">
+                        <i class="fas fa-comments accent-green mr-2"></i>
+                        Door <span class="accent-blue">gedeelde discussies</span> en educatieve inhoud leren leden marktomstandigheden te analyseren en verschillende beleggingsbenaderingen te begrijpen. <span class="accent-green">Kennis bouwt vertrouwen</span> op in financiële besluitvorming.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Learning Steps Section -->
+    <div class="bg-slate-800/50 py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="tag-hot mb-4">📋 BEWEZEN STAPPENPLAN</span>
+                <h2 class="text-3xl font-bold mb-6">
+                    7 Stappen naar Beter <span class="highlight-text">Financieel Begrip</span>
+                </h2>
+                <div class="key-point max-w-3xl mx-auto mb-8">
+                    <p class="text-xl text-gray-300">
+                        <i class="fas fa-map accent-purple mr-2"></i>
+                        Onze <span class="accent-blue">educatieve aanpak</span> richt zich op het progressief opbouwen van <span class="accent-green">praktische kennis</span>:
+                    </p>
+                </div>
+                
+                <div class="relative">
+                    <img src="img/5.jpg" alt="Educatieve Stappen" class="rounded-lg shadow-2xl max-w-md w-full mx-auto mb-8">
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-700/50 p-6 rounded-lg hover:bg-slate-600/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gradient-to-r from-blue-500 to-blue-600 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold">1</span>
+                        </div>
+                        <h3 class="font-semibold accent-blue">Leer de Basis</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        <i class="fas fa-check accent-green mr-2"></i>
+                        Begin met <span class="accent-blue">fundamentele beleggingsconcepten</span> en terminologie.
+                    </p>
+                </div>
+                
+                <div class="bg-slate-700/50 p-6 rounded-lg hover:bg-slate-600/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gradient-to-r from-green-500 to-green-600 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold">2</span>
+                        </div>
+                        <h3 class="font-semibold accent-green">Begrijp Markten</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        <i class="fas fa-check accent-green mr-2"></i>
+                        Bestudeer hoe verschillende markten werken en wat <span class="accent-orange">prijsbewegingen</span> drijft.
+                    </p>
+                </div>
+                
+                <div class="bg-slate-700/50 p-6 rounded-lg hover:bg-slate-600/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gradient-to-r from-purple-500 to-purple-600 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold">3</span>
+                        </div>
+                        <h3 class="font-semibold accent-purple">Risicobeoordeling</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        <i class="fas fa-check accent-green mr-2"></i>
+                        Leer verschillende soorten <span class="accent-orange">beleggingsrisico's</span> te evalueren en begrijpen.
+                    </p>
+                </div>
+                
+                <div class="bg-slate-700/50 p-6 rounded-lg hover:bg-slate-600/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gradient-to-r from-orange-500 to-orange-600 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold">4</span>
+                        </div>
+                        <h3 class="font-semibold accent-orange">Analysetechnieken</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        <i class="fas fa-check accent-green mr-2"></i>
+                        Bestudeer <span class="accent-blue">fundamentele en technische</span> analysemethoden en hun toepassingen.
+                    </p>
+                </div>
+                
+                <div class="bg-slate-700/50 p-6 rounded-lg hover:bg-slate-600/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gradient-to-r from-pink-500 to-pink-600 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold">5</span>
+                        </div>
+                        <h3 class="font-semibold accent-purple">Diversificatie</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        <i class="fas fa-check accent-green mr-2"></i>
+                        Leer over <span class="accent-blue">portefeuille diversificatie</span> en activaallocatiestrategieën.
+                    </p>
+                </div>
+                
+                <div class="bg-slate-700/50 p-6 rounded-lg hover:bg-slate-600/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gradient-to-r from-cyan-500 to-cyan-600 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold">6</span>
+                        </div>
+                        <h3 class="font-semibold accent-blue">Informatiebronnen</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        <i class="fas fa-check accent-green mr-2"></i>
+                        Identificeer <span class="accent-green">betrouwbare bronnen</span> van financiële informatie en gegevens.
+                    </p>
+                </div>
+                
+                <div class="bg-slate-700/50 p-6 rounded-lg md:col-span-2 lg:col-span-3 hover:bg-slate-600/50 transition-colors">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 w-8 h-8 rounded-full flex items-center justify-center mr-3">
+                            <span class="font-bold">7</span>
+                        </div>
+                        <h3 class="font-semibold accent-blue">Continu Leren</h3>
+                    </div>
+                    <p class="text-gray-300">
+                        <i class="fas fa-infinity accent-purple mr-2"></i>
+                        Ontwikkel een mindset van <span class="accent-green">continu leren</span> en blijf op de hoogte van <span class="accent-blue">marktontwikkelingen</span> en nieuwe analytische tools.
+                        <span class="tag-hot ml-2">🚀 LEVENSLANG</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button onclick="d2()" class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg inline-flex items-center space-x-2 breathing">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    <span>Start Leerreis</span>
+                    <i class="fas fa-graduation-cap"></i>
+                </button>
+                <p class="text-sm text-gray-400 mt-3">
+                    <i class="fas fa-users accent-green mr-1"></i>
+                    Al meer dan <span class="accent-green font-bold">1000+</span> tevreden leden
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Community Testimonials Section -->
+    <div class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="tag-hot mb-4">💬 ECHTE REVIEWS</span>
+                <h2 class="text-3xl font-bold mb-6">
+                    Wat Onze <span class="highlight-text">Leergemeenschap</span> Zegt
+                </h2>
+                <div class="key-point max-w-3xl mx-auto mb-8">
+                    <p class="text-xl text-gray-300">
+                        <i class="fas fa-star accent-orange mr-2"></i>
+                        Leden delen hun <span class="accent-blue">positieve ervaringen</span> met onze educatieve aanpak en gemeenschapsdiscussies.
+                    </p>
+                </div>
+                
+                <div class="bg-slate-700/50 p-8 rounded-lg max-w-2xl mx-auto relative">
+                    <div class="flex justify-center mb-4">
+                        <span class="text-yellow-400 text-2xl">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <i class="fas fa-quote-left text-4xl accent-blue mb-4"></i>
+                    <blockquote class="text-lg italic text-gray-300 mb-4">
+                        "<span class="accent-blue">Onderwijs is de basis</span> van slim beleggen. Het begrijpen van markten en risico's kost tijd en continu leren. Onze gemeenschap biedt een <span class="accent-green">ondersteunende omgeving</span> voor het delen van kennis en inzichten terwijl <span class="accent-orange">realistische verwachtingen</span> over beleggingsresultaten worden gehandhaafd."
+                    </blockquote>
+                    <div class="flex justify-center space-x-2 mt-4">
+                        <span class="tag-free">✅ BETROUWBAAR</span>
+                        <span class="tag-new">🎓 EDUCATIEF</span>
+                        <span class="tag-hot">💯 WAARDEVOL</span>
+                    </div>
+                </div>
+                
+                <div class="decorated-section mt-8">
+                    <p class="text-xl text-gray-300">
+                        <i class="fas fa-heart text-red-400 mr-2"></i>
+                        We zijn toegewijd aan het bieden van <span class="accent-blue">kwaliteitsvolle educatieve inhoud</span> en het bevorderen van betekenisvolle discussies over beleggen en marktanalyse. 
+                        <span class="accent-green">Sluit je bij ons aan</span> bij het samen opbouwen van financiële kennis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Risk Warning Section -->
+    <div class="bg-red-900/30 border-2 border-red-500/50 py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <span class="tag-hot mb-4">⚠️ VERPLICHTE LEZING</span>
+                <h2 class="text-2xl font-bold mb-6 text-red-400">
+                    <i class="fas fa-shield-alt mr-2"></i>
+                    Belangrijke Risicomelding
+                </h2>
+                <div class="text-left max-w-4xl mx-auto space-y-4 text-sm text-gray-300">
+                    <div class="bg-red-800/20 p-4 rounded-lg mb-4">
+                        <p><strong><i class="fas fa-exclamation-triangle text-red-400 mr-2"></i>Beleggingsrisicowaarschuwing:</strong> <span class="text-red-300">Alle beleggingen brengen risico van verlies met zich mee.</span> Eerdere prestaties garanderen geen toekomstige resultaten. De waarde van beleggingen kan dalen en stijgen, en u krijgt mogelijk niet het volledige geïnvesteerde bedrag terug.</p>
+                    </div>
+                    
+                    <div class="bg-yellow-800/20 p-4 rounded-lg mb-4">
+                        <p><strong><i class="fas fa-graduation-cap text-yellow-400 mr-2"></i>Alleen Educatieve Inhoud:</strong> <span class="text-yellow-300">Alle verstrekte informatie is uitsluitend voor educatieve doeleinden</span> en mag niet worden beschouwd als gepersonaliseerd financieel advies. Raadpleeg altijd gekwalificeerde financiële adviseurs voordat u beleggingsbeslissingen neemt.</p>
+                    </div>
+                    
+                    <div class="bg-blue-800/20 p-4 rounded-lg mb-4">
+                        <p><strong><i class="fas fa-chart-line text-blue-400 mr-2"></i>Marktvolatiliteit:</strong> <span class="text-blue-300">Aandelenmarkten zijn onderhevig aan volatiliteit</span> en significante fluctuaties. Marktomstandigheden kunnen snel veranderen, wat de beleggingswaarden beïnvloedt.</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4 mt-6">
+                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                            <p><strong><i class="fas fa-ban text-red-400 mr-2"></i>Geen Gegarandeerde Rendementen:</strong> We garanderen <span class="text-red-300">geen specifieke beleggingsrendementen</span> of uitkomsten. Alle beleggingsstrategieën brengen risico van verlies met zich mee.</p>
+                        </div>
+                        
+                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                            <p><strong><i class="fas fa-search text-purple-400 mr-2"></i>Onafhankelijk Onderzoek:</strong> Onze discussies en analyses zijn bedoeld voor <span class="text-purple-300">educatieve doeleinden</span> om beleggers te helpen marktdynamiek beter te begrijpen.</p>
+                        </div>
+                        
+                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                            <p><strong><i class="fas fa-gavel text-blue-400 mr-2"></i>Regelgevingscompliance:</strong> Beleggingsactiviteiten moeten voldoen aan <span class="text-blue-300">lokale wetten en regelgeving.</span> Zorg ervoor dat u de regelgevingsvereisten begrijpt.</p>
+                        </div>
+                        
+                        <div class="bg-gray-800/50 p-4 rounded-lg">
+                            <p><strong><i class="fas fa-clipboard-check text-green-400 mr-2"></i>Due Diligence:</strong> Voer altijd <span class="text-green-300">uw eigen onderzoek</span> uit voordat u beleggingsbeslissingen neemt. Overweeg uw financiële situatie en risicotolerantie.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-12">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <div class="decorated-section mb-6">
+                    <h3 class="text-xl font-semibold mb-4">
+                        <i class="fas fa-graduation-cap accent-blue mr-2"></i>
+                        <span class="highlight-text">Financieel Onderwijs</span> & Leergemeenschap
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        <i class="fas fa-rocket accent-purple mr-2"></i>
+                        Beleggers versterken door <span class="accent-blue">professioneel onderwijs</span> en kennisdeling
+                    </p>
+                    <div class="flex justify-center space-x-3">
+                        <span class="tag-free">📚 PREMIUM EDUCATIE</span>
+                        <span class="tag-new">🤝 ACTIEVE COMMUNITY</span>
+                        <span class="tag-hot">💡 CONTINUE GROEI</span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-6 mb-8">
+                    <a href="privacy.html" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fas fa-shield-alt mr-1"></i>Privacybeleid
+                    </a>
+                    <a href="terms.html" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fas fa-file-contract mr-1"></i>Servicevoorwaarden
+                    </a>
+                    <a href="risk.html" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fas fa-exclamation-triangle mr-1"></i>Risicowaarschuwing
+                    </a>
+                    <a href="disclaimer.html" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">
+                        <i class="fas fa-info-circle mr-1"></i>Educatieve Disclaimer
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Financieel Onderwijs & Leergemeenschap. Alle rechten voorbehouden.</p>
+                <p class="mt-2 text-sm">
+                    <i class="fas fa-graduation-cap accent-blue mr-1"></i>
+                    Deze website biedt <span class="accent-blue">educatieve inhoud</span> over beleggingsanalyse en markttrends. Alle inhoud is uitsluitend voor educatieve en informatieve doeleinden.
+                </p>
+                <p class="mt-2 text-xs">
+                    <span class="accent-green">✅ Educatief Platform</span> | 
+                    <span class="accent-blue">👥 Financiële Leergemeenschap</span> | 
+                    <span class="accent-orange">🚫 Geen Beleggingsadvies</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float breathing">
+        <div class="badge">1</div>
+        <i class="fab fa-whatsapp text-white text-2xl cursor-pointer" onclick="d2()"></i>
+    </div>
+
+    <!-- Floating Bottom Button -->
+    <div class="floating-btn">
+        <button onclick="d2()" class="btn-primary w-full py-4 rounded-full text-white font-semibold text-lg breathing inline-flex items-center justify-center space-x-2">
+            <i class="fab fa-whatsapp text-xl"></i>
+            <span>Doe Mee aan Leergemeenschap</span>
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Smooth scrolling for better user experience
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
