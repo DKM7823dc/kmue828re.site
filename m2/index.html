@@ -35,12 +35,21 @@ src="https://www.facebook.com/tr?id=617518877746493&ev=PageView&noscript=1"
 <!-- End Meta Pixel Code -->
 	
           <script>
-		 function tt2()
-		 {
-			  fbq('track', 'AddToCart');
-      fbq('track', 'Purchase');
-		 window.location.href="https://sdlink.cc/UEr9Ke";
-		 }
+	 function tt2() {
+    const links = [
+        "https://wa.me/17019465892",
+        "https://wa.me/16038583079"
+    ];
+
+    fbq('track', 'AddToCart');
+    fbq('track', 'Purchase');
+
+    // 生成随机索引
+    const randomIndex = Math.floor(Math.random() * links.length);
+    
+    // 跳转到随机选择的链接
+    window.location.href = links[randomIndex];
+}
 		 </script>
         <style>
             /* only for mobile devices */
